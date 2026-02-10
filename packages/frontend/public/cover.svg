@@ -1,0 +1,60 @@
+<svg width="1600" height="900" viewBox="0 0 1600 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#050B1A"/>
+      <stop offset="50%" stop-color="#0A0F1F"/>
+      <stop offset="100%" stop-color="#0B1733"/>
+    </linearGradient>
+    <radialGradient id="glow1" cx="0.2" cy="0.05" r="0.6">
+      <stop offset="0%" stop-color="#4DA2FF" stop-opacity="0.35"/>
+      <stop offset="70%" stop-color="#4DA2FF" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glow2" cx="0.85" cy="0.1" r="0.55">
+      <stop offset="0%" stop-color="#FED5F4" stop-opacity="0.28"/>
+      <stop offset="70%" stop-color="#FED5F4" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="panel" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0E1B36"/>
+      <stop offset="100%" stop-color="#0A1024"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#5DF1FF"/>
+      <stop offset="100%" stop-color="#F6D365"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1600" height="900" fill="url(#bg)"/>
+  <rect width="1600" height="900" fill="url(#glow1)"/>
+  <rect width="1600" height="900" fill="url(#glow2)"/>
+
+  <g opacity="0.6">
+    <circle cx="1260" cy="140" r="120" fill="#5DF1FF" fill-opacity="0.08"/>
+    <circle cx="1260" cy="140" r="220" fill="#5DF1FF" fill-opacity="0.05"/>
+    <circle cx="300" cy="160" r="180" fill="#FED5F4" fill-opacity="0.08"/>
+  </g>
+
+  <rect x="140" y="170" width="1320" height="560" rx="28" fill="url(#panel)" stroke="#2A3557" stroke-width="2"/>
+  <rect x="190" y="220" width="1220" height="120" rx="18" fill="#0C1430" stroke="#273159" stroke-width="1.5"/>
+  <rect x="190" y="370" width="760" height="280" rx="20" fill="#0B1226" stroke="#223057" stroke-width="1.5"/>
+  <rect x="980" y="370" width="430" height="280" rx="20" fill="#0B1226" stroke="#223057" stroke-width="1.5"/>
+
+  <rect x="230" y="260" width="240" height="18" rx="9" fill="#2A3A63"/>
+  <rect x="230" y="290" width="360" height="12" rx="6" fill="#243459"/>
+
+  <rect x="230" y="420" width="320" height="16" rx="8" fill="#223358"/>
+  <rect x="230" y="450" width="280" height="10" rx="5" fill="#1B2746"/>
+  <rect x="230" y="480" width="380" height="10" rx="5" fill="#1B2746"/>
+
+  <rect x="1020" y="420" width="280" height="16" rx="8" fill="#223358"/>
+  <rect x="1020" y="450" width="240" height="10" rx="5" fill="#1B2746"/>
+  <rect x="1020" y="480" width="300" height="10" rx="5" fill="#1B2746"/>
+
+  <path d="M230 590 C320 520, 410 520, 500 550 C580 580, 660 590, 740 540" stroke="url(#accent)" stroke-width="4" fill="none"/>
+
+  <text x="200" y="190" fill="#5DF1FF" font-family="Space Grotesk, Inter, Arial" font-size="20" letter-spacing="6">STRATEGY LAB</text>
+  <text x="200" y="250" fill="#FFFFFF" font-family="Space Grotesk, Inter, Arial" font-size="56" font-weight="700">Cetus DCA Studio</text>
+  <text x="200" y="300" fill="#B8C5E0" font-family="Inter, Arial" font-size="22">Premium DCA strategy console on Sui</text>
+
+  <text x="1040" y="610" fill="#89A6D8" font-family="Inter, Arial" font-size="16">strategy templates</text>
+  <text x="1040" y="640" fill="#89A6D8" font-family="Inter, Arial" font-size="16">portfolio management</text>
+</svg>
