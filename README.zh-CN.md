@@ -1,4 +1,13 @@
-# sui-nextjs-auth-template（pnpm Monorepo）
+# Cetus DCA Studio（Sui）
+
+这是一个基于 Sui 的 Cetus DCA 策略面板项目，提供：
+
+- 策略模板（保守 / 均衡 / 激进）
+- 多策略管理（保存 / 加载 / 删除）
+- 收益可视化（均价曲线 + 价格区间估算）
+- DCA 订单管理（创建 / 提取 / 关闭）
+
+> 注意：创建 DCA 订单需要 Cetus 官方签名服务生成的 `signature` + `timestamp`。官方签名服务并未公开文档，因此当前需要手动填入。
 
 这个仓库基于 **Sui dApp Starter**，使用 pnpm workspace 管理前后端代码：
 
@@ -29,7 +38,7 @@ pnpm dev
 
 该命令会启动 `packages/frontend` 的 Next.js 开发服务器。
 
-## 后端（Move 合约）如何部署
+## 后端（Move 合约）如何部署（可选）
 
 这里的“后端”指的是 Move 合约包。部署合约后，会自动把最新的 `packageId` 写入前端的 `packages/frontend/.env.local`，供前端调用。
 

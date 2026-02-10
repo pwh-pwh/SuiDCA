@@ -1,4 +1,4 @@
-import GreetingForm from '~~/dapp/components/GreetingForm'
+import DcaDashboard from '~~/dapp/components/DcaDashboard'
 import NetworkSupportChecker from './components/NetworkSupportChecker'
 
 export default function Home() {
@@ -6,7 +6,7 @@ export default function Home() {
     <>
       <NetworkSupportChecker />
       <div className="justify-content flex flex-grow flex-col items-center justify-center rounded-md p-3">
-        <GreetingForm />
+        <DcaDashboard />
       </div>
     </>
   )

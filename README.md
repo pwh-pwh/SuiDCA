@@ -1,4 +1,4 @@
-# Sui dApp Starter - Easy-to-Use Full-Stack Sui Starter
+# Cetus DCA Studio (Sui)
 [![Build and Lint (frontend)](https://github.com/suiware/sui-dapp-starter/actions/workflows/build_and_lint.yaml/badge.svg)](https://github.com/suiware/sui-dapp-starter/actions/workflows/build_and_lint.yaml)
 [![Discord chat](https://img.shields.io/discord/1237259509366521866.svg?logo=discord&style=flat-square)](https://discord.com/invite/HuDPpXz4Hx)
 
@@ -7,6 +7,17 @@
 ![Spoiler](https://repository-images.githubusercontent.com/794883099/f0937c6b-c021-41db-b44a-a287b29111c3)
 
 [Won the 1st place in the Randomness category of the Sui Overflow 2024 hackathon](https://blog.sui.io/2024-sui-overflow-hackathon-winners/)
+
+## Project Overview
+
+This project is a Cetus DCA strategy dashboard built on Sui. It provides:
+
+- Strategy templates (Conservative / Balanced / Aggressive)
+- Multi-strategy management (save / load / delete)
+- Simple ROI visualization (average cost curve + price band estimate)
+- DCA order management (open / withdraw / close)
+
+> Note: Creating a DCA order requires a valid `signature` + `timestamp` issued by Cetus signer service. Since the official signer endpoint is not publicly documented, this project expects manual input for now.
 
 ## Motivation
 
@@ -64,7 +75,7 @@ This way you'll be able to configure the project step-by-step.
 
 ## Usage
 
-#### 1. Run the local Sui network:
+#### 1. Run the local Sui network (optional):
 
 ```bash
 pnpm localnet:start
@@ -72,7 +83,7 @@ pnpm localnet:start
 
 Local Sui Explorer will be available on [localhost:9001](http://localhost:9001/)
 
-#### 2. Deploy the demo contract to the local network:
+#### 2. Deploy the demo contract to the local network (optional):
 
 ```bash
 pnpm localnet:deploy
@@ -80,7 +91,7 @@ pnpm localnet:deploy
 
 _This command skips dependency verifications to prevent dependency version mismatch issues, which are caused by local and remote Sui version mismatch. The deploy commands for devnet, testnet and mainnet do perform such verifications._
 
-#### 3. Switch to the local network in your browser wallet settings.
+#### 3. Switch to the desired network in your wallet (testnet recommended).
 
 #### 4. Fund your localnet account/address:
 
@@ -96,11 +107,17 @@ pnpm localnet:faucet 0xYOURADDRESS
 
 c) Run the app and use the Faucet button in the footer.
 
-#### 5. Run the app:
+#### 4. Run the app:
 
 ```bash
 pnpm start
 ```
+
+#### 5. Use the DCA dashboard
+
+- Choose strategy template or fill parameters manually.
+- Fill `signature` + `timestamp` if you want to create orders.
+- Manage orders in the “My DCA Orders” section.
 Find all commands in the [documentation](https://sui-dapp-starter.dev/docs/misc/commands/).
 
 ## Test
@@ -135,7 +152,7 @@ Code is licensed under [MIT](https://github.com/suiware/sui-dapp-starter?tab=MIT
 
 SVG Graphics used for NFTs is licensed under [CC-BY 4.0](https://github.com/suiware/sui-dapp-starter?tab=CC-BY-4.0-2-ov-file)
 
-## sui-nextjs-auth-template
+## Monorepo Structure
 
 This repo is a pnpm monorepo:
 

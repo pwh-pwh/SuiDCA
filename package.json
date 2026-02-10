@@ -25,7 +25,7 @@
     "frontend:deploy:walrus:testnet": "pnpm --filter frontend deploy:walrus:testnet",
     "frontend:deploy:walrus:mainnet": "pnpm --filter frontend deploy:walrus:mainnet",
     "frontend:deploy:arweave": "pnpm --filter frontend deploy:arweave",
-    
+
     "backend:build": "pnpm --filter backend build",
     "backend:test": "pnpm --filter backend test",
 
