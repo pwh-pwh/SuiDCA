@@ -309,15 +309,75 @@ const DcaDashboard = () => {
     whitelist.out_coin_list.length > 0 ? outCoinType : ''
 
   return (
-    <div className="flex w-full max-w-5xl flex-col gap-6">
-      <Card>
+    <div className="dca-shell">
+      <section className="dca-hero dca-glow">
+        <Flex direction="column" gap="3">
+          <Text size="1" color="gray" className="uppercase tracking-[0.32em]">
+            Strategy Lab
+          </Text>
+          <Text size="8" weight="bold" className="dca-title">
+            Cetus DCA Studio
+          </Text>
+          <Text size="2" color="gray">
+            高级定投控制台：模板策略、组合管理、收益区间可视化，一站式操控 DCA 订单。
+          </Text>
+          <Flex gap="2" wrap="wrap">
+            <span className="dca-chip">
+              Network <strong>{networkType ?? 'unknown'}</strong>
+            </span>
+            <span className="dca-chip">
+              Wallet <strong>{shortenId(currentAccount.address)}</strong>
+            </span>
+            <span className="dca-chip">
+              Strategies <strong>{strategies.length}</strong>
+            </span>
+          </Flex>
+        </Flex>
+      </section>
+
+      <Card className="dca-card dca-card-hover dca-glow">
         <Flex direction="column" gap="4">
-          <Text size="6" weight="bold">
-            Cetus DCA 策略管家（MVP）
+          <Text size="6" weight="bold" className="dca-title">
+            策略建模
           </Text>
           <Text size="2" color="gray">
             提供策略创建、订单查看与提取/关闭。创建订单需要价格签名与时间戳。
           </Text>
+
+          <Flex gap="3" wrap="wrap" className="dca-ghost rounded-xl p-3">
+            <div className="flex min-w-[160px] flex-1 flex-col gap-1">
+              <Text size="1" color="gray">
+                总投入
+              </Text>
+              <Text size="4" weight="bold">
+                {totalInAmount}
+              </Text>
+            </div>
+            <div className="flex min-w-[160px] flex-1 flex-col gap-1">
+              <Text size="1" color="gray">
+                单次投入
+              </Text>
+              <Text size="4" weight="bold">
+                {perCycleHint}
+              </Text>
+            </div>
+            <div className="flex min-w-[160px] flex-1 flex-col gap-1">
+              <Text size="1" color="gray">
+                周期次数
+              </Text>
+              <Text size="4" weight="bold">
+                {cycleCount}
+              </Text>
+            </div>
+            <div className="flex min-w-[160px] flex-1 flex-col gap-1">
+              <Text size="1" color="gray">
+                周期频率
+              </Text>
+              <Text size="4" weight="bold">
+                {cycleFrequency}s
+              </Text>
+            </div>
+          </Flex>
 
           <Flex gap="3" wrap="wrap">
             <TextField.Root
@@ -469,6 +529,7 @@ const DcaDashboard = () => {
             rows={3}
           />
 
+          <div className="dca-divider" />
           <Flex gap="3" justify="between" align="center">
             <Button onClick={handleCreateOrder} disabled={!canCreate}>
               创建 DCA 订单
@@ -480,7 +541,7 @@ const DcaDashboard = () => {
         </Flex>
       </Card>
 
-      <Card>
+      <Card className="dca-card dca-card-hover">
         <Flex direction="column" gap="4">
           <Flex justify="between" align="center">
             <Text size="5" weight="bold">
@@ -500,7 +561,7 @@ const DcaDashboard = () => {
               {orders.map((order) => (
                 <div
                   key={order.id}
-                  className="flex flex-col gap-2 rounded-md border border-sds-blue/30 bg-black/10 p-3"
+                  className="flex flex-col gap-2 rounded-xl border border-sds-blue/30 bg-black/20 p-4 transition hover:border-sds-blue/60"
                 >
                   <Text size="2" weight="bold">
                     {shortenId(order.id)} · {order.status}
@@ -529,7 +590,7 @@ const DcaDashboard = () => {
         </Flex>
       </Card>
 
-      <Card>
+      <Card className="dca-card dca-card-hover">
         <Flex direction="column" gap="4">
           <Text size="5" weight="bold">
             策略组合管理
@@ -543,7 +604,7 @@ const DcaDashboard = () => {
               {strategies.map((strategy) => (
                 <div
                   key={strategy.id}
-                  className="flex flex-col gap-2 rounded-md border border-sds-blue/30 bg-black/10 p-3"
+                  className="flex flex-col gap-2 rounded-xl border border-sds-blue/30 bg-black/20 p-4 transition hover:border-sds-blue/60"
                 >
                   <Text size="3" weight="bold">
                     {strategy.name}
@@ -570,7 +631,7 @@ const DcaDashboard = () => {
         </Flex>
       </Card>
 
-      <Card>
+      <Card className="dca-card dca-card-hover">
         <Flex direction="column" gap="4">
           <Text size="5" weight="bold">
             收益可视化（估算）
@@ -655,18 +716,18 @@ const PriceBandChart = ({
     .join(' ')
 
   return (
-    <div className="w-full rounded-md border border-sds-blue/30 bg-black/10 p-4">
-      <svg viewBox="0 0 100 100" className="h-48 w-full">
+    <div className="dca-price-chart w-full rounded-xl border border-sds-blue/30 bg-black/20 p-4">
+      <svg viewBox="0 0 100 100">
         <polygon
           points={`${band} ${bandBottom}`}
-          fill="rgba(255,255,255,0.08)"
+          fill="rgba(93,241,255,0.08)"
           stroke="none"
         />
         <polyline
           points={line}
           fill="none"
-          stroke="rgba(255,255,255,0.8)"
-          strokeWidth="1.5"
+          stroke="rgba(255,255,255,0.9)"
+          strokeWidth="1.8"
         />
       </svg>
       <Text size="2" color="gray">

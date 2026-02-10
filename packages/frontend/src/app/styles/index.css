@@ -4,14 +4,19 @@
 
 :root {
   --sds-light: #ffffffde;
-  --sds-dark: #011631;
+  --sds-dark: #050b1a;
   --sds-pink: #fed5f4;
   --sds-blue: #4da2ff;
-  --sds-font-inter: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  --sds-ink: #0a0f1f;
+  --sds-ice: #e6f0ff;
+  --sds-neon: #5df1ff;
+  --sds-gold: #f6d365;
+  --sds-font-display: "Space Grotesk", "IBM Plex Sans", "Segoe UI", system-ui, sans-serif;
+  --sds-font-body: "Inter", "IBM Plex Sans", "Segoe UI", system-ui, sans-serif;
 
   color-scheme: light dark;
 
-  font-family: var(--sds-font-inter);
+  font-family: var(--sds-font-body);
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -21,10 +26,113 @@
 body, #root {
   display: flex;
   flex-direction: column;
-  justify-content:center;
-  align-items:center;
+  justify-content: center;
+  align-items: center;
   min-width: 100%;
   min-height: 100vh;
+  background:
+    radial-gradient(1200px 600px at 20% 0%, rgba(77, 162, 255, 0.18), transparent 60%),
+    radial-gradient(900px 520px at 80% 10%, rgba(253, 213, 244, 0.2), transparent 55%),
+    linear-gradient(160deg, #050b1a 0%, #050b1a 55%, #071024 100%);
+  color: var(--sds-ice);
+}
+
+.dca-shell {
+  width: min(1100px, 95vw);
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.dca-hero {
+  position: relative;
+  padding: 28px 28px 24px;
+  border-radius: 20px;
+  background: linear-gradient(140deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.02));
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  overflow: hidden;
+}
+
+.dca-hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(600px 220px at 80% 20%, rgba(93, 241, 255, 0.18), transparent 60%);
+  pointer-events: none;
+}
+
+.dca-title {
+  font-family: var(--sds-font-display);
+  letter-spacing: -0.02em;
+}
+
+.dca-card {
+  border-radius: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(10, 15, 31, 0.7);
+  box-shadow: 0 18px 60px rgba(5, 10, 25, 0.45);
+  backdrop-filter: blur(18px);
+}
+
+.dca-card-hover {
+  transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
+}
+
+.dca-card-hover:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 22px 70px rgba(6, 12, 32, 0.55);
+  border-color: rgba(93, 241, 255, 0.25);
+}
+
+.dca-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  border-radius: 999px;
+  font-size: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--sds-ice);
+}
+
+.dca-chip strong {
+  color: var(--sds-neon);
+}
+
+.dca-divider {
+  height: 1px;
+  width: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+}
+
+.dca-glow {
+  position: relative;
+}
+
+.dca-glow::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  box-shadow: 0 0 40px rgba(93, 241, 255, 0.2);
+  opacity: 0;
+  transition: opacity 180ms ease;
+  pointer-events: none;
+}
+
+.dca-glow:hover::before {
+  opacity: 1;
+}
+
+.dca-ghost {
+  border: 1px dashed rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.dca-price-chart svg {
+  width: 100%;
+  height: 180px;
 }
 
 /* Custom styles where it's not possible to use Tailwind classes. */
