@@ -1,0 +1,3 @@
+工具：codex
+模型：gpt-5.2-code
+提示词：请你使用 https://www.npmjs.com/package/@cetusprotocol/dca-sdk 这个sdk结合sui完成定投策略应用
